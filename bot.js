@@ -37,8 +37,8 @@ client.on("messageCreate", (message) => {
               articles[i] = articles[j];
               articles[j] = temp;
             }
-
-            message.reply(data.data.articles[0].description);
+            if(data.data.articles[0].description !== null && data.data.articles[0].description.length > 1)
+                 message.reply(data.data.articles[0].description);
           }
         })
         .catch((err) => message.reply("Soory, No more news 😥"));
